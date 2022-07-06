@@ -1,8 +1,6 @@
 name: Test Event Workflow
 
-on: 
-  registry_package:
-  workflow_dispatch:
+on: [registry_package, workflow_dispatch]
   
 jobs:     
   print_context:
@@ -13,5 +11,4 @@ jobs:
       - name: Echo event name
         run: echo $GITHUB_EVENT_NAME
       - name: Print event properties
-        run: |
-          echo $EVENT_CONTEXT
+        run: echo $EVENT_CONTEXT
