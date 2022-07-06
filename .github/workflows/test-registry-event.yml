@@ -5,11 +5,11 @@ on:
   workflow_dispatch:
   
 jobs:
-  test:
-    if: github.event_name == 'registry_package' # Apply additional filters as needed
+        
+  print_context:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Echoing events
-        run: echo "${{ github.event }}"
+      - env:
+          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+        run: |
+          echo $EVENT_CONTEXT
