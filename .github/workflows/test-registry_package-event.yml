@@ -1,0 +1,14 @@
+name: Test Registry Package Event
+
+on:
+  registry_package:
+  
+jobs:
+  test:
+    if: github.event_name == 'registry_package' # Apply additional filters as needed
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Echoing events
+        run: echo "${{ github.event }}"
