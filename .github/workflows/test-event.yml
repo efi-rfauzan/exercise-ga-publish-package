@@ -1,13 +1,10 @@
-name: Test Event
+name: Test Event Workflow
 
 on: 
-  push:
-    branches: 'main'
   registry_package:
   workflow_dispatch:
   
-jobs:
-        
+jobs:     
   print_context:
     runs-on: ubuntu-latest
     env:
