@@ -10,9 +10,9 @@ jobs:
         
   print_context:
     runs-on: ubuntu-latest
+    env:
+      EVENT_CONTEXT: ${{ toJSON(github.event) }}
     steps:
-      - env:
-          EVENT_CONTEXT: ${{ toJSON(github.event) }}
       - name: Echo event name
         run: echo $GITHUB_EVENT_NAME
       - name: Print event properties
