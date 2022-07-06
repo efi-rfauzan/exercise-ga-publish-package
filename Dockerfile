@@ -2,6 +2,6 @@
 
 FROM alpine:latest
 
-RUN echo "hello"
+RUN apk update && echo "hello"
 
 CMD [ "echo", "hello from package updated" ]
