@@ -2,4 +2,4 @@
 
 FROM alpine:latest
 
-CMD [ "echo", "hello from package" ]
+CMD [ "echo", "hello from package updated" ]
